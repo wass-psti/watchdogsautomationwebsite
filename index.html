@@ -1047,7 +1047,16 @@
       .proj-item-number { font-size: 1.0rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #ac0505; margin-bottom: 0.85rem; }
       .proj-item-title { font-size: 1.8rem; font-weight: 800; line-height: 1.25; color: #0f172a; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
       .proj-item-tag { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid #e2e8f0; }
-      .proj-item-desc { font-size: 1.2rem; color: #475569; line-height: 1.8; margin-bottom: 1.75rem; max-width: 100%; }
+      .proj-item-desc {
+        font-size: 1.2rem;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 1.75rem;
+        max-width: 100%;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+      }
       .proj-view-btn {
         display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 800;
         letter-spacing: 0.14em; text-transform: uppercase; color: #0f172a; padding: 10px 22px;
@@ -1076,22 +1085,21 @@
         </div>
 
         <!-- PROJECT 1 -->
-        <a href="./projects/project1.html" class="proj-item scroll-fade" style="text-decoration:none">
+        <a href="./projects/project1.html" class="proj-item reverse scroll-fade" style="text-decoration:none">
           <div class="proj-item-img-wrap">
             <div class="proj-img-card">
-              <img src="./assets/images/YOUR_NEW_PROJECT_IMAGE.png" class="proj-item-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <img src="./assets/images/IMG_2390.jpeg" class="proj-item-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="proj-img-placeholder" style="display:none">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ac0505" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
               </div>
             </div>
           </div>
-        
           <div class="proj-item-body">
             <div class="proj-item-number">Project 01</div>
-            <div class="proj-item-title">YOUR NEW PROJECT TITLE</div>
-            <div class="proj-item-tag">YOUR NEW PROJECT SUBTITLE / CATEGORY</div>
+            <div class="proj-item-title">Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project</div>
+            <div class="proj-item-tag">Offshore Rig SCR Network and Control System Modernization</div>
             <p class="proj-item-desc">
-              Write the short description for the new project here.
+              This project covers the overall automation modernization and commissioning works completed onboard the Saturn Offshore Drilling Rig. The scope includes upgrading the SCR Main PLC control system, installing Siemens MTP1200 Unified Comfort HMIs, implementing Mud Pump current monitoring, upgrading the Hydraulic Power Unit PLC control system, and migrating the Doghouse Remote I/O system from Siemens ET200B to ET200SP. These works were performed to improve system reliability, diagnostics, maintainability, operator visibility, spare parts availability, and long-term supportability of the rig’s critical drilling and SCR network control systems.
             </p>
             <div class="proj-view-btn">
               <span>View Project</span>
