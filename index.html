@@ -562,6 +562,7 @@
       /* Rotate arrow when dropdown is open */
       .group:hover .nav-arrow {
         transform: rotate(180deg);
+        
     </style>
   </head>
 
@@ -1070,6 +1071,91 @@
       .proj-view-btn span, .proj-view-btn svg { position: relative; z-index: 1; }
       .proj-item:hover .proj-view-btn { color: #fff; border-color: #ac0505; gap: 16px; }
       .proj-item:hover .proj-view-btn::before { transform: translateX(0); }
+
+      /* ── Expandable Project 1 Description ── */
+      .project1-desc-wrap {
+        margin-bottom: 1.75rem;
+      }
+
+      .project1-desc-wrap .proj-item-desc {
+        margin-bottom: 0;
+      }
+
+      .project1-desc-full {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-top: 0;
+        transition:
+          max-height 0.45s ease,
+          opacity 0.35s ease,
+          margin-top 0.35s ease;
+      }
+
+      .project1-desc-wrap.expanded .project1-desc-full {
+        max-height: 900px;
+        opacity: 1;
+        margin-top: 1rem;
+      }
+
+      .project1-desc-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .project1-desc-list li {
+        font-size: 1rem;
+        color: #475569;
+        line-height: 1.6;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+      }
+
+      .project1-desc-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background: #ac0505;
+        flex-shrink: 0;
+        margin-top: 0.65rem;
+      }
+
+      .project-desc-toggle {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        width: fit-content;
+        border: none;
+        background: transparent;
+        padding: 0;
+        color: #ac0505;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .project-desc-toggle:hover {
+        color: #8b0000;
+      }
+
+      .project-desc-toggle svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.25s ease;
+      }
+
+      .project1-desc-wrap.expanded .project-desc-toggle svg {
+        transform: rotate(180deg);
+      }
     </style>
 
     <section id="projects" class="bg-white">
@@ -1085,28 +1171,75 @@
         </div>
 
         <!-- PROJECT 1 -->
-        <a href="./projects/project1.html" class="proj-item reverse scroll-fade" style="text-decoration:none">
+        <div class="proj-item reverse scroll-fade" style="text-decoration:none">
           <div class="proj-item-img-wrap">
             <div class="proj-img-card">
-              <img src="./assets/images/IMG_2390.jpeg" class="proj-item-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <img
+                src="./assets/images/IMG_2390.jpeg"
+                class="proj-item-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
               <div class="proj-img-placeholder" style="display:none">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ac0505" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ac0505" stroke-width="1.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                </svg>
               </div>
             </div>
           </div>
+
           <div class="proj-item-body">
             <div class="proj-item-number">Project 01</div>
-            <div class="proj-item-title">Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project</div>
-            <div class="proj-item-tag">Offshore Rig SCR Network and Control System Modernization</div>
-            <p class="proj-item-desc">
-              This project covers the overall automation modernization and commissioning works completed onboard the Saturn Offshore Drilling Rig. The scope includes upgrading the SCR Main PLC control system, installing Siemens MTP1200 Unified Comfort HMIs, implementing Mud Pump current monitoring, upgrading the Hydraulic Power Unit PLC control system, and migrating the Doghouse Remote I/O system from Siemens ET200B to ET200SP. These works were performed to improve system reliability, diagnostics, maintainability, operator visibility, spare parts availability, and long-term supportability of the rig’s critical drilling and SCR network control systems.
-            </p>
-            <div class="proj-view-btn">
-              <span>View Project</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+            <div class="proj-item-title">
+              Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project
             </div>
+
+            <div class="proj-item-tag">
+              Offshore Rig SCR Network and Control System Modernization
+            </div>
+
+            <div class="project1-desc-wrap">
+              <p class="proj-item-desc">
+                This project covers the overall automation modernization and commissioning works completed onboard the Saturn Offshore Drilling Rig, including the SCR Main PLC upgrade, Siemens MTP1200 HMI installation, Mud Pump current monitoring, HPU PLC upgrade, and Doghouse Remote I/O migration.
+              </p>
+
+              <div class="project1-desc-full" id="project1MoreDesc">
+                <p class="proj-item-desc">
+                  The modernization was performed to replace obsolete control hardware, improve diagnostics, increase system reliability, strengthen operator visibility, and support long-term maintainability of the rig’s critical drilling and SCR network control systems.
+                </p>
+
+                <ul class="project1-desc-list">
+                  <li>Upgraded the SCR Main PLC control system from Siemens S7-300 to Siemens S7-1500.</li>
+                  <li>Installed Siemens MTP1200 Unified Comfort HMIs for SCR network monitoring and control.</li>
+                  <li>Implemented Mud Pump armature current monitoring for Motors A and B.</li>
+                  <li>Upgraded the Hydraulic Power Unit PLC control system from EATON D50 to Siemens S7-1200.</li>
+                  <li>Migrated the Doghouse Remote I/O system from Siemens ET200B to Siemens ET200SP.</li>
+                  <li>Verified digital I/O, analog I/O, Profibus DP communication, HMI visualization, alarm functions, and operational readiness.</li>
+                </ul>
+              </div>
+
+              <button
+                type="button"
+                class="project-desc-toggle"
+                aria-expanded="false"
+                aria-controls="project1MoreDesc"
+              >
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </div>
+
+            <a href="./projects/project1.html" class="proj-view-btn" style="text-decoration:none">
+              <span>View Project</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
           </div>
-        </a>
+        </div>
 
         <!-- PROJECT 2 -->
         <a href="./projects/project2.html" class="proj-item scroll-fade" style="text-decoration:none">
@@ -1651,6 +1784,20 @@
 
         <script>
           document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+
+        <script>
+          document.querySelectorAll(".project-desc-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+              const wrapper = button.closest(".project1-desc-wrap");
+              const label = button.querySelector("span");
+
+              const isExpanded = wrapper.classList.toggle("expanded");
+
+              button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+              label.textContent = isExpanded ? "Show Less" : "Read More";
+            });
+          });
         </script>
 
       </div>
