@@ -1156,6 +1156,54 @@
       .project1-desc-wrap.expanded .project-desc-toggle svg {
         transform: rotate(180deg);
       }
+
+      /* ── Project 1 Extra Images on Read More ── */
+      .project1-extra-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-top: 0;
+        transition:
+          max-height 0.45s ease,
+          opacity 0.35s ease,
+          margin-top 0.35s ease;
+      }
+
+      .proj-item.project1-expanded .project1-extra-images {
+        max-height: 700px;
+        opacity: 1;
+        margin-top: 1rem;
+      }
+
+      .project1-extra-img-card {
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-right: 4px solid #ac0505;
+      }
+
+      .project1-extra-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+
+      .project1-extra-img-card:hover .project1-extra-img {
+        transform: scale(1.04);
+      }
+
+      @media (max-width: 767px) {
+        .project1-extra-img {
+          height: 160px;
+        }
+      }
     </style>
 
     <section id="projects" class="bg-white">
@@ -1173,17 +1221,38 @@
         <!-- PROJECT 1 -->
         <div class="proj-item reverse scroll-fade" style="text-decoration:none">
           <div class="proj-item-img-wrap">
-            <div class="proj-img-card">
-              <img
-                src="./assets/images/IMG_2390.jpeg"
-                class="proj-item-img"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <div class="proj-img-placeholder" style="display:none">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ac0505" stroke-width="1.5">
-                  <rect x="2" y="3" width="20" height="14" rx="2"/>
-                  <path d="M8 21h8M12 17v4"/>
-                </svg>
+            <div class="w-full">
+              <div class="proj-img-card">
+                <img
+                  src="./assets/images/IMG_2390.jpeg"
+                  class="proj-item-img"
+                  alt="Saturn Offshore Drilling Rig SCR Network Modernization"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="proj-img-placeholder" style="display:none">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ac0505" stroke-width="1.5">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project1-extra-images" aria-hidden="true">
+                <div class="project1-extra-img-card">
+                  <img
+                    src="./assets/images/IMG_2102.jpeg"
+                    class="project1-extra-img"
+                    alt="Saturn Offshore Drilling Rig commissioning work photo"
+                  />
+                </div>
+
+                <div class="project1-extra-img-card">
+                  <img
+                    src="./assets/images/IMG_2147.jpeg"
+                    class="project1-extra-img"
+                    alt="Saturn Offshore Drilling Rig automation commissioning photo"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -1209,14 +1278,14 @@
                   The modernization was performed to replace obsolete control hardware, improve diagnostics, increase system reliability, strengthen operator visibility, and support long-term maintainability of the rig’s critical drilling and SCR network control systems.
                 </p>
 
-                <ul class="project1-desc-list">
+                <!--<ul class="project1-desc-list">
                   <li>Upgraded the SCR Main PLC control system from Siemens S7-300 to Siemens S7-1500.</li>
                   <li>Installed Siemens MTP1200 Unified Comfort HMIs for SCR network monitoring and control.</li>
                   <li>Implemented Mud Pump armature current monitoring for Motors A and B.</li>
                   <li>Upgraded the Hydraulic Power Unit PLC control system from EATON D50 to Siemens S7-1200.</li>
                   <li>Migrated the Doghouse Remote I/O system from Siemens ET200B to Siemens ET200SP.</li>
                   <li>Verified digital I/O, analog I/O, Profibus DP communication, HMI visualization, alarm functions, and operational readiness.</li>
-                </ul>
+                </ul> -->
               </div>
 
               <button
@@ -1789,16 +1858,23 @@
         <script>
           document.querySelectorAll(".project-desc-toggle").forEach((button) => {
             button.addEventListener("click", () => {
+              const projectItem = button.closest(".proj-item");
               const wrapper = button.closest(".project1-desc-wrap");
               const label = button.querySelector("span");
+              const extraImages = projectItem.querySelector(".project1-extra-images");
 
               const isExpanded = wrapper.classList.toggle("expanded");
 
+              projectItem.classList.toggle("project1-expanded", isExpanded);
               button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
               label.textContent = isExpanded ? "Show Less" : "Read More";
+
+              if (extraImages) {
+                extraImages.setAttribute("aria-hidden", isExpanded ? "false" : "true");
+              }
             });
           });
-        </script>
+      </script>
 
       </div>
     </footer>

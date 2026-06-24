@@ -38,7 +38,6 @@
       margin-bottom: 0.6rem;
     }
 
-    /* ── Grid card list ── */
     .sys-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -73,7 +72,6 @@
       flex-shrink: 0;
     }
 
-    /* ── Left-border pill list ── */
     .pill-list {
       display: flex;
       flex-direction: column;
@@ -94,16 +92,11 @@
       line-height: 1.45;
     }
 
-    .prose-body {
-      text-align: justify;
-    }
-
     .flex-1 p {
       text-align: justify;
     }
 
     @media (max-width: 767px) {
-      .prose-body,
       .flex-1 p {
         text-align: left;
       }
@@ -116,7 +109,6 @@
       }
     }
 
-    /* ── Numbered work cards ── */
     .work-card {
       border: 1px solid #e2e8f0;
       border-radius: 0.9rem;
@@ -151,7 +143,6 @@
       padding: 1.1rem;
     }
 
-    /* ── Scroll-triggered fade-in ── */
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
@@ -174,29 +165,12 @@
       transform: translateX(0);
     }
 
-    .delay-100 {
-      transition-delay: 0.10s;
-    }
-
-    .delay-200 {
-      transition-delay: 0.20s;
-    }
-
-    .delay-300 {
-      transition-delay: 0.30s;
-    }
-
-    .delay-400 {
-      transition-delay: 0.40s;
-    }
-
-    .delay-500 {
-      transition-delay: 0.50s;
-    }
-
-    .delay-600 {
-      transition-delay: 0.60s;
-    }
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+    .delay-400 { transition-delay: 0.40s; }
+    .delay-500 { transition-delay: 0.50s; }
+    .delay-600 { transition-delay: 0.60s; }
   </style>
 </head>
 
@@ -440,7 +414,6 @@
 <!-- ═══════════════════ ARTICLE HEADER ═══════════════════ -->
 <div class="mx-auto max-w-5xl px-4 sm:px-6 pt-10 pb-6">
 
-  <!-- Breadcrumb -->
   <div class="flex items-center gap-2 text-xs text-slate-400 mb-6 flex-wrap">
     <a href="../index.html" class="hover:text-slate-700">Home</a>
     <span>›</span>
@@ -449,20 +422,15 @@
     <span class="text-slate-600">Saturn Offshore Drilling Rig Automation Modernization</span>
   </div>
 
-  <!-- Category tag -->
   <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">
     Offshore Rig SCR Network · Siemens PLC/HMI Modernization · Commissioning
   </span>
 
-  <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
     Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project
   </h1>
 
-  <!-- Meta row -->
   <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
-    <span><span class="font-semibold text-slate-700">Client:</span> EDC Romfor Ltd. – Saturn Rig</span>
-    <span class="hidden sm:inline text-slate-300">|</span>
     <span><span class="font-semibold text-slate-700">Location:</span> Saturn Offshore Drilling Rig, Caspian Sea</span>
     <span class="hidden sm:inline text-slate-300">|</span>
     <span><span class="font-semibold text-slate-700">Commissioning Date:</span> June 16, 2026</span>
@@ -492,31 +460,30 @@
 
       <!-- Overview -->
       <div class="fade-up">
-        <div class="section-label">Project Overview</div>
+        <div class="section-label">1. Project Overview</div>
 
         <p class="text-slate-600 text-lg leading-relaxed">
-          Watchdog Automation completed a multi-package automation modernization and commissioning project onboard the Saturn Offshore Drilling Rig. The project consolidated several critical control and monitoring upgrades under one integrated modernization scope, covering the SCR Main PLC network, operator interface systems, Mud Pump current monitoring, Hydraulic Power Unit control, and Doghouse Remote I/O infrastructure.
+          The Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project was a multi-scope automation upgrade and commissioning program completed onboard the Saturn Offshore Drilling Rig, located in the Caspian Sea. The project focused on modernizing several critical control and monitoring systems connected to the rig’s SCR network and drilling equipment.
         </p>
 
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The works were performed to address hardware obsolescence, limited spare parts availability, reduced legacy-system support, and increasing maintenance difficulty across the rig’s existing automation architecture. By migrating key systems to modern Siemens automation platforms, the project improved system diagnostics, reliability, maintainability, operator visibility, and long-term supportability for drilling operations.
+          The overall modernization covered the SCR Main PLC control system, Siemens MTP1200 Unified Comfort HMI stations, Mud Pump current monitoring system, Hydraulic Power Unit PLC control system, and Doghouse Remote I/O system. These systems are directly connected to important rig-floor equipment such as generators, mud pumps, drawworks, rotary table, operator interfaces, and remote I/O stations.
         </p>
 
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The modernization preserved existing operational functions where required while introducing upgraded PLC, HMI, Remote I/O, signal acquisition, and monitoring capabilities. This allowed the rig’s control systems to remain operationally familiar to personnel while improving technical performance and future expansion readiness.
+          The main objective of the project was to replace obsolete automation hardware, improve system reliability, enhance diagnostics, strengthen operator visibility, increase spare parts availability, and provide a more maintainable automation platform for continuous drilling operations. The work was carried out while preserving existing operating functions and minimizing changes to the field architecture wherever possible, reducing commissioning risk and avoiding unnecessary disruption to rig operations.
         </p>
       </div>
 
-      <!-- Overall Scope -->
+      <!-- Scope -->
       <div class="fade-up">
         <div class="section-label">Integrated Commissioning Scope</div>
 
         <p class="text-slate-600 text-lg leading-relaxed">
-          The overall project consisted of five major commissioning packages, each focused on a specific automation subsystem within the rig’s SCR network and rig-floor control architecture.
+          As a whole, the project transformed multiple legacy control and monitoring systems into a more modern Siemens-based automation architecture. The upgraded systems improved communication stability, alarm handling, data visibility, troubleshooting capability, and readiness for future expansion.
         </p>
       </div>
 
-      <!-- Scope Grid -->
       <div class="fade-up">
         <div class="sys-grid">
           <div class="sys-card"><span class="sys-card-dot"></span>SCR Main PLC migration from Siemens S7-300 to Siemens S7-1500</div>
@@ -526,170 +493,203 @@
           <div class="sys-card"><span class="sys-card-dot"></span>Doghouse Remote I/O migration from Siemens ET200B to ET200SP</div>
           <div class="sys-card"><span class="sys-card-dot"></span>Profibus DP and Profinet communication verification</div>
           <div class="sys-card"><span class="sys-card-dot"></span>Digital and analog I/O testing, calibration, and validation</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Final commissioning, operational testing, and client acceptance</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Final commissioning, operational testing, and acceptance</div>
         </div>
       </div>
 
-      <!-- Work Package 1 -->
+      <!-- Project Scope Details -->
+      <div class="fade-up">
+        <div class="section-label">2. Project Scope Details</div>
+
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The modernization work was executed through five major technical scopes. Each scope addressed a specific limitation in the existing automation system and introduced an upgraded solution to improve reliability, diagnostics, maintainability, operator visibility, and long-term system support.
+        </p>
+      </div>
+
+      <!-- Scope 1 -->
       <div class="fade-up work-card">
         <div class="work-card-head">
           <span class="work-number">01</span>
           <div>
-            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Purchase Order No. S26-0029</div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 01</div>
             <h2 class="text-xl font-extrabold text-slate-900">SCR Main PLC Controller Upgrade</h2>
           </div>
         </div>
 
         <div class="work-card-body">
           <p class="text-slate-600 text-lg leading-relaxed">
-            The obsolete Siemens S7-300 CPU 315-2DP was migrated to a Siemens SIMATIC S7-1500 CPU 1513 platform with Profibus DP communication capability. The upgraded PLC serves as the central controller for the rig’s SCR network and coordinates critical drilling equipment including generators, mud pumps, drawworks, rotary table, remote I/O stations, and operator interfaces.
+            This scope focused on upgrading the SCR Main PLC controller, which serves as the central automation controller for major rig-floor systems such as generators, mud pumps, drawworks, rotary table, remote I/O stations, and operator interfaces. The existing controller was based on an obsolete Siemens S7-300 platform, creating long-term concerns related to hardware aging, spare parts availability, limited diagnostics, and future supportability.
           </p>
 
           <p class="text-slate-600 text-lg leading-relaxed mt-4">
-            The migration was completed while maintaining compatibility with the existing Profibus DP field network and operational control philosophy. Software and communication mapping adjustments were implemented to ensure that field devices, HMI displays, generator status signals, mud pump monitoring, and equipment interlocks functioned correctly under the upgraded PLC architecture.
+            The solution involved migrating the SCR Main PLC to a Siemens SIMATIC S7-1500 platform while maintaining compatibility with the existing Profibus DP field network. The PLC program, communication mapping, command words, status bits, and process values were reviewed, modified, and validated to ensure that the upgraded controller could communicate correctly with all connected field devices and legacy subsystems.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            During commissioning, the mud pumps, drawworks, rotary table, generator monitoring, alarm handling, and Doghouse HMI communication were tested and corrected where necessary. The upgrade improved system diagnostics, communication stability, operational reliability, and future expandability while preserving the existing control philosophy.
           </p>
 
           <div class="pill-list mt-6">
-            <div class="pill-item">Migration from Siemens S7-300 CPU 315-2DP to Siemens S7-1500 CPU 1513</div>
-            <div class="pill-item">Integration and verification of 22 Profibus DP slave devices</div>
-            <div class="pill-item">Mud Pump, Generator, Drawworks, and Rotary Table operational verification</div>
-            <div class="pill-item">Doghouse HMI communication and visualization compatibility adjustments</div>
+            <div class="pill-item">Migrated the SCR Main PLC from Siemens S7-300 to Siemens S7-1500</div>
+            <div class="pill-item">Integrated and verified 22 Profibus DP slave devices</div>
+            <div class="pill-item">Validated Mud Pump, Generator, Drawworks, and Rotary Table control functions</div>
+            <div class="pill-item">Enhanced generator monitoring, alarm handling, and equipment status visibility</div>
             <div class="pill-item">Improved diagnostics, communication stability, and maintainability</div>
           </div>
         </div>
       </div>
 
-      <!-- Work Package 2 -->
+      <!-- Scope 2 -->
       <div class="fade-up work-card">
         <div class="work-card-head">
           <span class="work-number">02</span>
           <div>
-            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Purchase Order No. S26-0067</div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 02</div>
             <h2 class="text-xl font-extrabold text-slate-900">Siemens MTP1200 Unified Comfort HMI Installation</h2>
           </div>
         </div>
 
         <div class="work-card-body">
           <p class="text-slate-600 text-lg leading-relaxed">
-            Two Siemens MTP1200 Unified Comfort Panels were supplied, installed, tested, and commissioned for the SCR Network Monitoring and Control System. The HMI upgrade replaced obsolete visualization hardware and provided improved operator visibility, alarm monitoring, equipment diagnostics, and remote monitoring capability.
+            This scope covered the modernization of the SCR Network operator interface system. The previous HMI platform was based on older Siemens MP277 technology, which had become obsolete and limited in terms of visualization capability, diagnostics, performance, and long-term support.
           </p>
 
           <p class="text-slate-600 text-lg leading-relaxed mt-4">
-            The HMI application was migrated and enhanced from the legacy Siemens MP277 platform to the Siemens Unified environment. The new HMI stations provide real-time monitoring of generators, mud pumps, drawworks, rotary table, SCR alarms, communication diagnostics, and equipment health information.
+            Two Siemens MTP1200 Unified Comfort Panels were installed and commissioned: one for primary SCR network operation and another for remote monitoring and diagnostics. The legacy HMI application was reverse-engineered, rebuilt, and enhanced within the Siemens Unified environment. Existing screens, tags, alarms, navigation structures, and diagnostic functions were reconfigured for communication with the upgraded Siemens S7-1500 PLC through Profinet.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            The upgraded HMI system now provides centralized visualization of generators, mud pumps, drawworks, rotary table, SCR alarms, communication diagnostics, and equipment health information. Both HMI stations were tested for stable communication, screen functionality, alarm synchronization, and simultaneous operation.
           </p>
 
           <div class="pill-list mt-6">
-            <div class="pill-item">Installation of two Siemens MTP1200 Unified Comfort Panels</div>
-            <div class="pill-item">Migration and redevelopment of legacy MP277 HMI screens</div>
-            <div class="pill-item">Profinet communication with the upgraded Siemens S7-1500 SCR Main PLC</div>
-            <div class="pill-item">Primary operator interface installed in the SCR control area</div>
-            <div class="pill-item">Remote monitoring and diagnostic station installed for maintenance personnel</div>
+            <div class="pill-item">Installed two Siemens MTP1200 Unified Comfort Panels</div>
+            <div class="pill-item">Rebuilt and migrated the legacy MP277 HMI application</div>
+            <div class="pill-item">Configured Profinet communication with the upgraded SCR Main PLC</div>
+            <div class="pill-item">Added centralized monitoring for major rig-floor equipment</div>
+            <div class="pill-item">Verified HMI synchronization, alarms, diagnostics, and real-time data display</div>
           </div>
         </div>
       </div>
 
-      <!-- Work Package 3 -->
+      <!-- Scope 3 -->
       <div class="fade-up work-card">
         <div class="work-card-head">
           <span class="work-number">03</span>
           <div>
-            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Purchase Order No. S26-0053</div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 03</div>
             <h2 class="text-xl font-extrabold text-slate-900">Mud Pumps Current Monitoring System</h2>
           </div>
         </div>
 
         <div class="work-card-body">
           <p class="text-slate-600 text-lg leading-relaxed">
-            A real-time Mud Pump armature current monitoring system was installed for Mud Pump No. 1, Mud Pump No. 2, and Mud Pump No. 3. Each mud pump was equipped with monitoring for Motor A and Motor B using LEM HOOP 2000-SB current transducers connected to Siemens PLC analog inputs.
+            This scope addressed the need for real-time visibility of Mud Pump armature current values. Each mud pump uses Motor A and Motor B, and without dedicated current monitoring, maintenance and operations personnel had limited visibility of current sharing, motor loading, and SCR drive performance.
           </p>
 
           <p class="text-slate-600 text-lg leading-relaxed mt-4">
-            The system converts transducer voltage signals into engineering values in amperes and displays the resulting values through the upgraded Siemens MTP1200 Unified Comfort HMI. This provides operations and maintenance personnel with visibility of current sharing, motor loading, and SCR drive performance.
+            A current monitoring system was installed for Mud Pump No. 1, Mud Pump No. 2, and Mud Pump No. 3. Six LEM HOOP 2000-SB current transducers were used to measure the armature current of each Motor A and Motor B. The transducer outputs were connected to Siemens PLC analog input channels and scaled from 0–4 VDC into engineering values from 0 to 2000 amperes.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            The measured current values were integrated into the Siemens MTP1200 Unified Comfort HMI for real-time display, monitoring, diagnostics, and future data logging. During commissioning, incorrect polarity indications were observed on some channels and were corrected by adjusting the orientation of the affected current transducers. All six channels were recalibrated, verified, and confirmed operational.
           </p>
 
           <div class="pill-list mt-6">
-            <div class="pill-item">Six LEM HOOP 2000-SB current transducers installed</div>
-            <div class="pill-item">Analog signal range configured from 0–4 VDC equivalent to 0–2000 A</div>
-            <div class="pill-item">All six monitoring channels calibrated and verified</div>
-            <div class="pill-item">Real-time HMI visualization of Mud Pump Motor A and Motor B currents</div>
-            <div class="pill-item">Improved troubleshooting visibility and predictive maintenance support</div>
+            <div class="pill-item">Installed six LEM HOOP 2000-SB current transducers</div>
+            <div class="pill-item">Configured 0–4 VDC analog signal scaling to 0–2000 A</div>
+            <div class="pill-item">Integrated Mud Pump current values into the HMI system</div>
+            <div class="pill-item">Corrected current transducer orientation to resolve polarity issues</div>
+            <div class="pill-item">Improved visibility of motor loading, current sharing, and SCR drive performance</div>
           </div>
         </div>
       </div>
 
-      <!-- Work Package 4 -->
+      <!-- Scope 4 -->
       <div class="fade-up work-card">
         <div class="work-card-head">
           <span class="work-number">04</span>
           <div>
-            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Purchase Order No. S26-0077</div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 04</div>
             <h2 class="text-xl font-extrabold text-slate-900">Hydraulic Power Unit PLC Control System Upgrade</h2>
           </div>
         </div>
 
         <div class="work-card-body">
           <p class="text-slate-600 text-lg leading-relaxed">
-            The obsolete EATON D50 PLC-based control system for the Hydraulic Power Unit was replaced with a Siemens SIMATIC S7-1200 PLC platform. The HPU serves as an auxiliary hydraulic system supporting the Drawworks braking system and required a reliable, maintainable, and supportable control platform.
+            This scope involved the modernization of the Hydraulic Power Unit control system. The existing system was controlled by an obsolete EATON D50 PLC, which created supportability, diagnostics, and spare parts concerns. The HPU is an important auxiliary system because it supplies hydraulic power to the drawworks braking system.
           </p>
 
           <p class="text-slate-600 text-lg leading-relaxed mt-4">
-            The upgraded system maintained local panel operation and Doghouse remote operation while improving diagnostics and troubleshooting visibility. Digital inputs, digital outputs, relay interfaces, power supply performance, alarm signals, and operational control functions were tested and verified.
+            The obsolete PLC was replaced with a Siemens SIMATIC S7-1200 PLC platform. The upgraded system maintained the required local panel operation, Doghouse remote operation, alarm handling, and signal feedback to the existing drawworks control system. Digital inputs, digital outputs, relay interfaces, power supply performance, pilot lights, alarms, and operational functions were tested and verified.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            After initial commissioning, the system was reported as non-responsive during testing. Investigation confirmed that required start-up permissive conditions were not fully satisfied. The PLC logic was enhanced with improved diagnostics, rung comments, program documentation, and additional status indications, making the system easier to troubleshoot and maintain.
           </p>
 
           <div class="pill-list mt-6">
-            <div class="pill-item">Replacement of obsolete EATON D50 PLC with Siemens S7-1200 PLC</div>
-            <div class="pill-item">Verification of 9 digital inputs and 9 digital outputs</div>
-            <div class="pill-item">Local start/stop and Doghouse remote control verification</div>
-            <div class="pill-item">Low oil level, high temperature, and motor trip alarm testing</div>
-            <div class="pill-item">Improved PLC diagnostics and documented program troubleshooting support</div>
+            <div class="pill-item">Replaced the obsolete EATON D50 PLC with Siemens S7-1200</div>
+            <div class="pill-item">Verified 9 digital inputs and 9 digital outputs</div>
+            <div class="pill-item">Tested local start/stop and Doghouse remote operation</div>
+            <div class="pill-item">Verified low oil level, high temperature, motor trip, and strobe light functions</div>
+            <div class="pill-item">Improved PLC diagnostics, documentation, and maintenance troubleshooting visibility</div>
           </div>
         </div>
       </div>
 
-      <!-- Work Package 5 -->
+      <!-- Scope 5 -->
       <div class="fade-up work-card">
         <div class="work-card-head">
           <span class="work-number">05</span>
           <div>
-            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Purchase Order No. S26-0114</div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 05</div>
             <h2 class="text-xl font-extrabold text-slate-900">Doghouse Remote I/O Migration from Siemens ET200B to ET200SP</h2>
           </div>
         </div>
 
         <div class="work-card-body">
           <p class="text-slate-600 text-lg leading-relaxed">
-            The Doghouse Remote I/O system was migrated from obsolete Siemens ET200B hardware to the modern Siemens ET200SP distributed I/O platform. The upgrade was performed to address hardware obsolescence, improve spare parts availability, enhance diagnostics, and provide a scalable platform for future expansion.
+            This scope focused on upgrading the Doghouse Remote I/O system from obsolete Siemens ET200B hardware to Siemens ET200SP distributed I/O. The existing Remote I/O platform had become difficult to maintain due to limited spare parts availability, reduced manufacturer support, and limited diagnostic capability.
           </p>
 
           <p class="text-slate-600 text-lg leading-relaxed mt-4">
-            The migration preserved the existing PLC I/O addressing to maintain software compatibility while improving maintainability and diagnostic capability. Digital inputs, digital outputs, analog inputs, analog outputs, Profibus DP communication, and additional drilling parameter monitoring signals were tested and validated.
+            The migration was designed to preserve the existing PLC I/O addressing so that the existing control program could remain compatible with the upgraded hardware. Digital inputs, digital outputs, analog inputs, and analog outputs were migrated, wired, tested, calibrated, and validated. The new ET200SP platform also provided improved diagnostics, modularity, maintainability, and future expansion capability.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            Additional drilling data acquisition points were integrated into the Remote I/O system, including monitoring signals for top drive torque, top drive speed, choke pressures, standpipe pressure, cement pressure, flow out, and hook load. Profibus DP communication was verified for node detection, data exchange, communication stability, bus diagnostics, and module health status.
           </p>
 
           <div class="pill-list mt-6">
-            <div class="pill-item">Migration from Siemens ET200B Remote I/O to Siemens ET200SP distributed I/O</div>
-            <div class="pill-item">64 digital inputs and 32 digital outputs tested and verified</div>
-            <div class="pill-item">24 analog input channels calibrated and validated</div>
-            <div class="pill-item">3 analog output channels verified</div>
-            <div class="pill-item">Additional drilling parameters integrated into the SCR PLC network</div>
-            <div class="pill-item">Profibus DP communication integrity confirmed stable</div>
+            <div class="pill-item">Migrated Doghouse Remote I/O from Siemens ET200B to Siemens ET200SP</div>
+            <div class="pill-item">Preserved existing PLC I/O addressing for software compatibility</div>
+            <div class="pill-item">Verified 64 digital inputs and 32 digital outputs</div>
+            <div class="pill-item">Calibrated and validated 24 analog input channels and 3 analog output channels</div>
+            <div class="pill-item">Integrated additional drilling parameter monitoring signals</div>
+            <div class="pill-item">Verified stable Profibus DP communication and module diagnostics</div>
           </div>
         </div>
       </div>
 
-      <!-- Commissioning Results -->
+      <!-- Overall Result -->
       <div class="fade-up">
-        <div class="section-label">Commissioning Results</div>
+        <div class="section-label">Overall Result</div>
 
         <p class="text-slate-600 text-lg leading-relaxed">
-          All major commissioning packages were completed successfully. The upgraded systems demonstrated stable communication, correct field signal response, verified PLC and HMI functionality, reliable alarm handling, and proper operational behavior under tested rig conditions.
+          The overall modernization project was successfully completed, tested, and commissioned. Each upgraded system met its acceptance criteria and was verified for operational readiness.
         </p>
 
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The final commissioning status confirmed that the systems were accepted and recommended for operational service. The project strengthened the rig’s automation infrastructure by improving diagnostics, maintainability, operator visibility, spare parts support, and readiness for future modernization phases.
+          The completed works improved the rig’s automation infrastructure by replacing obsolete hardware, enhancing PLC and HMI diagnostics, improving operator visibility, increasing system maintainability, and supporting future integration into a more unified Siemens automation architecture.
+        </p>
+
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The project also established a stronger foundation for future upgrades, including wider Profinet migration, additional centralized monitoring, improved data logging, strategic spare parts planning, and continued modernization of remaining legacy control and drive systems.
         </p>
       </div>
 
-      <!-- Results List -->
+      <!-- Result List -->
       <div class="fade-up">
         <ul class="space-y-2 mt-4">
           <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100">
@@ -714,39 +714,9 @@
           </li>
           <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-600">
             <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
-            Project closed successfully and accepted for continuous operation
+            Project completed and accepted for continuous operation
           </li>
         </ul>
-      </div>
-
-      <!-- Recommendations -->
-      <div class="fade-up">
-        <div class="section-label">Recommended Future Enhancements</div>
-
-        <p class="text-slate-600 text-lg leading-relaxed">
-          Following the successful commissioning of the upgraded systems, several future enhancements were recommended to continue improving the rig’s automation architecture and reduce dependence on legacy control platforms.
-        </p>
-
-        <div class="pill-list mt-6">
-          <div class="pill-item">Migrate remaining Profibus DP communication networks to Profinet where practical</div>
-          <div class="pill-item">Replace the remaining obsolete Doghouse MP277 HMI with a Siemens Unified Comfort Panel</div>
-          <div class="pill-item">Integrate upgraded HPU and Mud Pump PLCs into the centralized Siemens automation network</div>
-          <div class="pill-item">Maintain strategic spare parts for PLC, HMI, Remote I/O, power supply, and communication hardware</div>
-          <div class="pill-item">Consider future SCR drive modernization using modern Siemens DC drive technology</div>
-        </div>
-      </div>
-
-      <!-- Closing -->
-      <div class="fade-up">
-        <div class="section-label">Engineering Value Delivered</div>
-
-        <p class="text-slate-600 text-lg leading-relaxed">
-          This project demonstrates Watchdog Automation’s capability to execute complex offshore automation modernization works involving legacy system migration, Siemens PLC engineering, HMI integration, Remote I/O replacement, instrumentation calibration, communication troubleshooting, and full commissioning support.
-        </p>
-
-        <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          By combining multiple modernization scopes into a coordinated execution program, the project delivered a more reliable, maintainable, and future-ready automation platform for Saturn Rig’s SCR network and rig-floor control systems.
-        </p>
       </div>
 
       <!-- Back link -->
@@ -764,7 +734,6 @@
     <!-- ── SIDEBAR ── -->
     <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4 fade-up delay-200">
 
-      <!-- Project details -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
         <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
           <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">
@@ -779,15 +748,6 @@
             </div>
             <div class="font-semibold text-slate-800">
               Offshore Rig SCR Network and Control System Modernization
-            </div>
-          </div>
-
-          <div>
-            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
-              Client
-            </div>
-            <div class="font-semibold text-slate-800">
-              EDC Romfor Ltd. – Saturn Rig
             </div>
           </div>
 
@@ -829,11 +789,10 @@
         </div>
       </div>
 
-      <!-- Work packages -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
         <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
           <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">
-            Work Packages
+            Work Scopes
           </div>
         </div>
 
@@ -846,7 +805,6 @@
         </div>
       </div>
 
-      <!-- CTA -->
       <div class="rounded-xl bg-slate-950 p-5 text-white">
         <div class="font-extrabold text-sm mb-1">
           Have a similar project?
