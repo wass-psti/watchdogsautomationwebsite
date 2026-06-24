@@ -171,6 +171,167 @@
     .delay-400 { transition-delay: 0.40s; }
     .delay-500 { transition-delay: 0.50s; }
     .delay-600 { transition-delay: 0.60s; }
+
+    /* ── Scope Card Images ── */
+    .scope-card-image-wrap {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .scope-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card:hover .scope-card-image {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 767px) {
+      .scope-card-image-wrap {
+        height: 200px;
+      }
+    }
+
+    /* ── Project Hero Slideshow ── */
+    .project-hero-slider {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 40vw, 480px);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+
+    .project-hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+    }
+
+    .project-hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* subtle dark edge overlay for arrows */
+    .project-hero-slider::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.22),
+        transparent 22%,
+        transparent 78%,
+        rgba(0, 0, 0, 0.22)
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Arrows */
+    .project-hero-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(15, 23, 42, 0.65);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-hero-arrow:hover {
+      background: #ac0505;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .project-hero-arrow svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .project-hero-prev {
+      left: 16px;
+    }
+
+    .project-hero-next {
+      right: 16px;
+    }
+
+    /* Dots */
+    .project-hero-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(6px);
+    }
+
+    .project-hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      border: none;
+      background: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+
+    .project-hero-dot.active {
+      width: 22px;
+      background: #ffffff;
+    }
+
+    @media (max-width: 767px) {
+      .project-hero-arrow {
+        width: 36px;
+        height: 36px;
+      }
+
+      .project-hero-prev {
+        left: 10px;
+      }
+
+      .project-hero-next {
+        right: 10px;
+      }
+
+      .project-hero-dots {
+        bottom: 10px;
+      }
+    }
   </style>
 </head>
 
@@ -441,14 +602,69 @@
   </div>
 </div>
 
-<!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
+<!-- ═══════════════════ HERO IMAGE SLIDESHOW ═══════════════════ -->
 <div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
-  <img
-    src="../assets/images/IMG_2390.jpeg"
-    alt="Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization"
-    class="w-full rounded-xl object-cover"
-    style="height: clamp(220px, 40vw, 480px);"
-  />
+  <div class="project-hero-slider" id="projectHeroSlider">
+
+    <!-- Slides -->
+    <div class="project-hero-slide active">
+      <img
+        src="../assets/images/IMG_2390.jpeg"
+        alt="Saturn Offshore Drilling Rig SCR Network modernization"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/IMG_2102.jpeg"
+        alt="Saturn Offshore Drilling Rig automation commissioning work"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/IMG_2147.jpeg"
+        alt="Saturn Offshore Drilling Rig automation system installation"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/IMG_2390.jpeg"
+        alt="Saturn Offshore Drilling Rig PLC and HMI modernization"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/IMG_2432.jpeg"
+        alt="Saturn Offshore Drilling Rig commissioning and validation"
+      />
+    </div>
+
+    <!-- Left Arrow -->
+    <button class="project-hero-arrow project-hero-prev" type="button" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <!-- Right Arrow -->
+    <button class="project-hero-arrow project-hero-next" type="button" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M9 6l6 6-6 6" />
+      </svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="project-hero-dots" aria-label="Slideshow navigation">
+      <button class="project-hero-dot active" type="button" aria-label="Go to image 1"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 2"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 3"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 4"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 5"></button>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════ BODY ═══════════════════ -->
@@ -508,6 +724,13 @@
 
       <!-- Scope 1 -->
       <div class="fade-up work-card">
+        <div class="scope-card-image-wrap">
+          <img
+            src="../assets/images/IMG_2478 2 2.jpeg"
+            alt="Short image description"
+            class="scope-card-image"
+          />
+        </div>
         <div class="work-card-head">
           <span class="work-number">01</span>
           <div>
@@ -541,6 +764,13 @@
 
       <!-- Scope 2 -->
       <div class="fade-up work-card">
+        <div class="scope-card-image-wrap">
+          <img
+            src="../assets/images/IMG_2468 2 2.jpeg"
+            alt="Short image description"
+            class="scope-card-image"
+          />
+        </div>
         <div class="work-card-head">
           <span class="work-number">02</span>
           <div>
@@ -574,6 +804,13 @@
 
       <!-- Scope 3 -->
       <div class="fade-up work-card">
+        <div class="scope-card-image-wrap">
+          <img
+            src="../assets/images/IMG_2475 2 2.jpeg"
+            alt="Short image description"
+            class="scope-card-image"
+          />
+        </div>
         <div class="work-card-head">
           <span class="work-number">03</span>
           <div>
@@ -607,6 +844,13 @@
 
       <!-- Scope 4 -->
       <div class="fade-up work-card">
+        <div class="scope-card-image-wrap">
+          <img
+            src="../assets/images/IMG_2504.jpeg"
+            alt="Short image description"
+            class="scope-card-image"
+          />
+        </div>
         <div class="work-card-head">
           <span class="work-number">04</span>
           <div>
@@ -640,6 +884,13 @@
 
       <!-- Scope 5 -->
       <div class="fade-up work-card">
+        <div class="scope-card-image-wrap">
+          <img
+            src="../assets/images/IMG_2147.jpeg"
+            alt="Short image description"
+            class="scope-card-image"
+          />
+        </div>
         <div class="work-card-head">
           <span class="work-number">05</span>
           <div>
@@ -853,6 +1104,76 @@
     );
 
     els.forEach((el) => observer.observe(el));
+  })();
+</script>
+
+<script>
+  (function () {
+    const slider = document.getElementById("projectHeroSlider");
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".project-hero-slide");
+    const dots = slider.querySelectorAll(".project-hero-dot");
+    const prevBtn = slider.querySelector(".project-hero-prev");
+    const nextBtn = slider.querySelector(".project-hero-next");
+
+    let currentSlide = 0;
+    let slideTimer;
+    const slideInterval = 35000;
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      dots[currentSlide].classList.remove("active");
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+      slideTimer = setInterval(nextSlide, slideInterval);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(slideTimer);
+      startAutoSlide();
+    }
+
+    nextBtn.addEventListener("click", function () {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    prevBtn.addEventListener("click", function () {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", function () {
+        showSlide(index);
+        resetAutoSlide();
+      });
+    });
+
+    slider.addEventListener("mouseenter", function () {
+      clearInterval(slideTimer);
+    });
+
+    slider.addEventListener("mouseleave", function () {
+      startAutoSlide();
+    });
+
+    startAutoSlide();
   })();
 </script>
 
