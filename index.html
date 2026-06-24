@@ -562,6 +562,7 @@
       /* Rotate arrow when dropdown is open */
       .group:hover .nav-arrow {
         transform: rotate(180deg);
+      }
         
     </style>
   </head>
@@ -1204,6 +1205,52 @@
           height: 160px;
         }
       }
+
+      .project-new-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 0.28rem 0.75rem;
+      border-radius: 9999px;
+      background: #059669;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+      box-shadow: 0 8px 22px rgba(5, 150, 105, 0.22);
+      }
+
+      .project-label-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-label-stack .proj-item-number {
+      margin-bottom: 0;
+    }
+
+    .project-new-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 0.28rem 0.75rem;
+      border-radius: 9999px;
+      background: #059669;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      box-shadow: 0 8px 22px rgba(5, 150, 105, 0.22);
+    }
     </style>
 
     <section id="projects" class="bg-white">
@@ -1258,7 +1305,10 @@
           </div>
 
           <div class="proj-item-body">
-            <div class="proj-item-number">Project 01</div>
+            <div class="project-label-stack">
+              <div class="project-new-badge">Newly Completed</div>
+              <div class="proj-item-number">Project 01</div>
+            </div>
 
             <div class="proj-item-title">
               Saturn Offshore Drilling Rig SCR Network and Rig-Floor Automation Modernization Project
@@ -1349,7 +1399,10 @@
           </div>
 
           <div class="proj-item-body">
+          <div class="project-label-stack">
+            <div class="project-new-badge">Newly Completed</div>
             <div class="proj-item-number">Project 03</div>
+          </div>
 
             <div class="proj-item-title">
               Chiller Plant PLC–SCADA Integration and Remote Monitoring System
