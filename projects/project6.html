@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Distillery Automation Modernization | Watchdog Automation</title>
+  <title>European OEM Feedmill Control System Replacement | Watchdog Automation</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -57,7 +57,7 @@
     }
     .pill-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.75rem;
       padding: 0.65rem 1rem;
       background: #f8fafc;
@@ -67,22 +67,9 @@
       font-weight: 600;
       color: #334155;
     }
-
-    /* ── Tech spec table ── */
-    .tech-row {
-      display: grid;
-      grid-template-columns: 165px 1fr;
-      gap: 1.25rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid #f1f5f9;
-      align-items: start;
-    }
-    .tech-row:last-child { border-bottom: none; }
-    @media (max-width: 480px) {
-      .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
-    }
-    .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
+    .pill-item-body { display: flex; flex-direction: column; gap: 0.15rem; }
+    .pill-item-title { font-weight: 800; color: #1e293b; }
+    .pill-item-desc { font-weight: 500; color: #64748b; font-size: 0.875rem; }
 
     .flex-1 p { text-align: justify; }
 
@@ -278,15 +265,15 @@
     <span>›</span>
     <a href="../index.html#projects" class="hover:text-slate-700">Projects</a>
     <span>›</span>
-    <span class="text-slate-600">Distillery Automation Modernization</span>
+    <span class="text-slate-600">European OEM Feedmill Control System Replacement</span>
   </div>
 
   <!-- Category tag -->
-  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Food &amp; Beverage · PLC Migration · Control Panel Rehabilitation</span>
+  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Flagship Project · Industrial Automation · PLC Migration · Reverse Engineering</span>
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
-    Distillery Automation Modernization –<br class="hidden sm:block"/> Legacy PLC Migration &amp; Control Panel Rehabilitation for a Food &amp; Beverage Processing Facility
+    European OEM Feedmill Control System Replacement –<br class="hidden sm:block"/> Full Reverse Engineering and Migration to Siemens SIMATIC S7-1500 Architecture
   </h1>
 
   <!-- Meta row -->
@@ -302,8 +289,8 @@
 <!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
 <div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
   <img
-    src="../assets/images/DistilleryProject.jpg"
-    alt="Distillery Automation Modernization"
+    src="../assets/images/ProjectTestThree.png"
+    alt="European OEM Feedmill Control System Replacement"
     class="w-full rounded-xl object-cover"
     style="height: clamp(220px, 40vw, 480px);"
   />
@@ -320,72 +307,172 @@
       <div class="fade-up">
         <div class="section-label">Project Overview</div>
         <p class="text-slate-600 text-lg leading-relaxed">
-          Watchdog Automation successfully executed a complete automation modernization project for a major Food &amp; Beverage distillation facility, replacing a legacy control platform with a high-performance Siemens automation architecture. The project addressed the challenges of obsolete hardware, limited system support, and aging control infrastructure, ensuring long-term operational reliability and improved plant performance.
+          Watchdog Automation successfully completed a full-scale reverse engineering and automation platform replacement for a large industrial feedmill production facility, transforming a proprietary European OEM automation system into a modern, open, and fully maintainable Siemens-based control architecture.
         </p>
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The existing automation system was built on the Allen-Bradley SLC500 platform, which had reached obsolescence and posed increasing risks related to spare parts availability, system downtime, and maintenance limitations. Our engineering team carried out a full migration of the control system to the Siemens SIMATIC S7-1500 platform, providing a modern, scalable, and future-ready automation solution.
-        </p>
-      </div>
-
-      <!-- Software Migration -->
-      <div class="fade-up">
-        <div class="section-label">Software Migration</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          A major part of the project involved reverse engineering and software migration. The original RSLogix 500 program was carefully analyzed, re-structured, and converted into Siemens TIA Portal V20, ensuring that all process logic, interlocks, and safety conditions were accurately replicated while taking advantage of the advanced capabilities of the new platform.
-        </p>
-      </div>
-
-      <!-- Operator Interface Upgrade -->
-      <div class="fade-up">
-        <div class="section-label">Operator Interface Upgrade</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          To complement the PLC upgrade, the operator interface was modernized using a Siemens SIMATIC Unified Comfort Panel (MTP1200). The new HMI provides enhanced visualization, improved diagnostics, and a significantly more intuitive user experience for plant operators and maintenance personnel.
-        </p>
-      </div>
-
-      <!-- Control Panel Rehabilitation -->
-      <div class="fade-up">
-        <div class="section-label">Control Panel Rehabilitation</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          Beyond the control system upgrade, the project included a complete rehabilitation of the automation control panel. The legacy enclosure and internal electrical components were replaced with a new industrial-grade SS316 stainless steel enclosure, specifically designed for the harsh environmental conditions typically present in distillation and food processing environments.
+          The original automation system was supplied by a Swiss feedmill equipment manufacturer, utilizing a software-based PLC architecture built on Wonderware InControl, with plant supervision handled through Wonderware Archestra IDE SCADA. The facility's production management layer was implemented through a custom-developed Feedmill Manager application written in legacy Visual Basic, which coordinated batching, formulation, process sequencing, and production monitoring.
         </p>
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          All internal components — including power distribution devices, relays, terminal blocks, protection devices, and wiring systems — were replaced with new industrial-grade hardware, resulting in a fully rebuilt control panel compliant with modern industrial standards.
-        </p>
-        <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The final system now operates on a high-performance Siemens S7-1517 PLC, providing substantial improvements in processing power, communication capability, diagnostics, and long-term maintainability.
-        </p>
-      </div>
-
-      <!-- Project Highlights -->
-      <div class="fade-up">
-        <div class="section-label">Project Highlights</div>
-        <div class="sys-grid">
-          <div class="sys-card"><span class="sys-card-dot"></span>Migration from Allen-Bradley SLC500 to Siemens SIMATIC S7-1500 CPU 1517</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Conversion of RSLogix 500 program to Siemens TIA Portal V20 architecture</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Deployment of Siemens MTP1200 Unified HMI for advanced plant visualization</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Complete control panel rehabilitation and modernization</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Installation of a SS316 stainless steel industrial enclosure for corrosion resistance</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Replacement of all internal electrical components and wiring</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Improved system reliability, maintainability, and spare parts availability</div>
-        </div>
-      </div>
-
-      <!-- Engineering Value Delivered -->
-      <div class="fade-up">
-        <div class="section-label">Engineering Value Delivered</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          This project demonstrates Watchdog Automation's capability to perform complex cross-platform PLC migrations, modernize legacy industrial systems, and deliver fully engineered control solutions aligned with current automation standards.
-        </p>
-        <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The upgraded system now provides the distillery with:
+          While the system had served the plant for many years, the owner faced significant operational risks due to:
         </p>
         <div class="pill-list mt-4">
-          <div class="pill-item">Higher automation reliability</div>
-          <div class="pill-item">Enhanced operator visibility and diagnostics</div>
-          <div class="pill-item">Reduced maintenance risks associated with obsolete equipment</div>
-          <div class="pill-item">Improved scalability for future process expansion</div>
+          <div class="pill-item">Dependence on proprietary OEM technology</div>
+          <div class="pill-item">Limited availability of qualified support engineers</div>
+          <div class="pill-item">High maintenance and upgrade costs from overseas suppliers</div>
+          <div class="pill-item">Aging software infrastructure and legacy development platforms</div>
         </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          To address these challenges, Watchdog Automation was commissioned to perform a complete reverse engineering and modernization of the entire feedmill automation system, enabling the facility to migrate away from the proprietary OEM platform and transition to a globally supported industrial automation architecture.
+        </p>
+      </div>
+
+      <!-- Reverse Engineering -->
+      <div class="fade-up">
+        <div class="section-label">Reverse Engineering a Proprietary Industrial Control System</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The project began with a deep technical analysis of the original automation infrastructure, including the reconstruction of control logic, plant process architecture, communication structures, and supervisory interfaces.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The feedmill control system consisted of 1,054 process tags, covering the complete plant operation, including:
+        </p>
+        <div class="sys-grid mt-4">
+          <div class="sys-card"><span class="sys-card-dot"></span>Raw material intake and silo management</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Grinding and milling operations</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Automated ingredient dosing and batching</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Mixing and conditioning processes</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Pelletizing and cooling lines</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Finished product storage and load-out</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Plant-wide alarm monitoring and process interlocks</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Because the original OEM system was built using software-based PLC technology, the entire process control logic had to be carefully reverse engineered and redeveloped into a hardware PLC platform while maintaining full operational compatibility with the plant's existing equipment and instrumentation.
+        </p>
+      </div>
+
+      <!-- Migration to Hardware PLC -->
+      <div class="fade-up">
+        <div class="section-label">Migration to Industrial Hardware PLC Architecture</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The legacy software PLC environment was replaced with a high-performance Siemens SIMATIC S7-1517-3 PN/DP controller, providing industrial-grade reliability, deterministic processing, and long-term lifecycle support.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The new automation system was engineered using the Siemens TIA Portal integrated engineering framework, enabling seamless integration between PLC control logic, SCADA systems, and plant data management.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Supervisory monitoring and plant visualization were modernized through the implementation of Siemens WinCC Professional V19 SCADA, delivering advanced features including:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">Real-time plant monitoring and control</div>
+          <div class="pill-item">Integrated alarm management and diagnostics</div>
+          <div class="pill-item">Historical process data logging and trending</div>
+          <div class="pill-item">Advanced graphical process visualization</div>
+          <div class="pill-item">Multi-user supervisory access</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The migration from a software PLC environment to a dedicated industrial control platform significantly improved system robustness, reliability, and long-term maintainability.
+        </p>
+      </div>
+
+      <!-- Feedmill Production Management Platform -->
+      <div class="fade-up">
+        <div class="section-label">Redevelopment of the Feedmill Production Management Platform</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          One of the most technically demanding aspects of the project involved the complete redevelopment of the plant's proprietary Feedmill Manager application.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The original application was developed using legacy Visual Basic technology, which had become difficult to maintain due to outdated development tools and compatibility limitations.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Watchdog Automation performed a full reverse engineering and software modernization of the Feedmill Manager, rewriting the entire application in the modern VB.NET framework.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The new Feedmill Manager platform was designed to integrate directly with:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">Siemens S7-1517 PLC process control system</div>
+          <div class="pill-item">WinCC Professional SCADA environment</div>
+          <div class="pill-item">Real-time plant production data</div>
+          <div class="pill-item">Batch formulation and production reporting modules</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          This modernization created a fully unified automation and production management ecosystem, providing operators and plant managers with improved control, visibility, and operational efficiency.
+        </p>
+      </div>
+
+      <!-- Modern Industrial Automation Architecture -->
+      <div class="fade-up">
+        <div class="section-label">Modern Industrial Automation Architecture</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The upgraded feedmill now operates on a state-of-the-art automation platform consisting of:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">PLC Platform</span>
+              <span class="pill-item-desc">Siemens SIMATIC S7-1517-3 PN/DP Industrial Controller</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">SCADA System</span>
+              <span class="pill-item-desc">Siemens WinCC Professional V19</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Production Management System</span>
+              <span class="pill-item-desc">Custom Feedmill Manager Redeveloped in VB.NET</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Automation Scope</span>
+              <span class="pill-item-desc">1,054 integrated process tags across the entire feedmill facility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Alternative -->
+      <div class="fade-up">
+        <div class="section-label">A Strategic Alternative to OEM Automation Systems</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          By successfully reverse engineering and replacing the original European OEM automation system, Watchdog Automation delivered a fully independent, open-architecture control system that the plant can maintain and expand without relying on proprietary technology providers.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Most significantly, the entire modernization project was completed at less than half the cost quoted by the original Swiss OEM, providing the client with substantial capital savings while delivering a far more flexible and scalable automation platform.
+        </p>
+      </div>
+
+      <!-- Operational Impact -->
+      <div class="fade-up">
+        <div class="section-label">Operational Impact</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The feedmill facility now benefits from a modern industrial automation system designed for long-term operational sustainability.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Key outcomes include:
+        </p>
+        <div class="sys-grid mt-4">
+          <div class="sys-card"><span class="sys-card-dot"></span>Elimination of proprietary OEM technology dependency</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Migration to globally supported Siemens automation platform</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Significant reduction in maintenance and upgrade costs</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Improved plant diagnostics and troubleshooting capability</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Modern SCADA visualization and data management</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Fully integrated production management software</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Automation architecture ready for future plant expansion</div>
+        </div>
+      </div>
+
+      <!-- Engineering Excellence -->
+      <div class="fade-up">
+        <div class="section-label">Engineering Excellence in Industrial Automation</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          This flagship project demonstrates Watchdog Automation's ability to replace complex proprietary OEM automation systems through advanced reverse engineering, industrial software development, and large-scale control system integration.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          With expertise spanning PLC engineering, SCADA development, industrial software architecture, and system modernization, Watchdog Automation enables industrial facilities to regain control of their automation infrastructure while achieving superior performance, reliability, and cost efficiency.
+        </p>
       </div>
 
       <!-- Back link -->
@@ -407,8 +494,9 @@
           <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Project Details</div>
         </div>
         <div class="px-4 py-4 space-y-3 text-sm">
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Category</div><div class="font-semibold text-slate-800">PLC Migration / Control Panel Modernization</div></div>
+          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Category</div><div class="font-semibold text-slate-800">PLC Migration / Reverse Engineering / SCADA Upgrade</div></div>
           <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Location</div><div class="font-semibold text-slate-800">Philippines</div></div>
+          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Automation Platform</div><div class="font-semibold text-slate-800">Siemens S7-1517, WinCC, VB.NET Manager</div></div>
           <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Status</div>
             <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-700"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Completed</span>
           </div>

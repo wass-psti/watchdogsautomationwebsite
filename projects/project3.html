@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Distillery Automation Modernization | Watchdog Automation</title>
+
+  <title>Chiller Plant PLC-SCADA Integration and Remote Monitoring System | Watchdog Automation</title>
+
+  <meta
+    name="description"
+    content="Watchdog Automation completed a chiller plant PLC-SCADA integration project using Siemens S7-1200 PLC, Modbus communication, SCADA monitoring, real-time data acquisition, alarm logging, historical trending, reporting, and remote monitoring."
+  />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    html, body { font-family: 'Manrope', sans-serif; overflow-x: hidden; }
-    .group:hover .nav-arrow { transform: rotate(180deg); }
+    html,
+    body {
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .group:hover .nav-arrow {
+      transform: rotate(180deg);
+    }
 
     .section-label {
       font-size: 0.8rem;
@@ -19,15 +38,18 @@
       margin-bottom: 0.6rem;
     }
 
-    /* ── Grid card list ── */
     .sys-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0.65rem;
     }
+
     @media (max-width: 600px) {
-      .sys-grid { grid-template-columns: 1fr; }
+      .sys-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     .sys-card {
       display: flex;
       align-items: center;
@@ -41,6 +63,7 @@
       color: #334155;
       line-height: 1.4;
     }
+
     .sys-card-dot {
       width: 7px;
       height: 7px;
@@ -49,12 +72,12 @@
       flex-shrink: 0;
     }
 
-    /* ── Left-border pill list ── */
     .pill-list {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
     }
+
     .pill-item {
       display: flex;
       align-items: center;
@@ -66,57 +89,222 @@
       font-size: 0.9375rem;
       font-weight: 600;
       color: #334155;
+      line-height: 1.45;
     }
 
-    /* ── Tech spec table ── */
-    .tech-row {
-      display: grid;
-      grid-template-columns: 165px 1fr;
-      gap: 1.25rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid #f1f5f9;
-      align-items: start;
+    .flex-1 p {
+      text-align: justify;
     }
-    .tech-row:last-child { border-bottom: none; }
-    @media (max-width: 480px) {
-      .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
-    }
-    .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
 
-    .flex-1 p { text-align: justify; }
+    @media (max-width: 767px) {
+      .flex-1 p {
+        text-align: left;
+      }
+    }
 
     @media (min-width: 1024px) {
-      .sidebar-sticky { position: sticky; top: 5.5rem; }
+      .sidebar-sticky {
+        position: sticky;
+        top: 5.5rem;
+      }
     }
 
-    /* ── Scroll-triggered fade-in ── */
+    .work-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.9rem;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .work-card-head {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 1rem 1.1rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .work-number {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background: #ac0505;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .work-card-body {
+      padding: 1.1rem;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
+
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .fade-left {
       opacity: 0;
       transform: translateX(-24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     .fade-left.visible {
       opacity: 1;
       transform: translateX(0);
     }
+
     .delay-100 { transition-delay: 0.10s; }
     .delay-200 { transition-delay: 0.20s; }
     .delay-300 { transition-delay: 0.30s; }
     .delay-400 { transition-delay: 0.40s; }
     .delay-500 { transition-delay: 0.50s; }
     .delay-600 { transition-delay: 0.60s; }
+
+    /* ── Project Hero Slideshow ── */
+    .project-hero-slider {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 40vw, 480px);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+
+    .project-hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+    }
+
+    .project-hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-hero-slider::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.22),
+        transparent 22%,
+        transparent 78%,
+        rgba(0, 0, 0, 0.22)
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .project-hero-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(15, 23, 42, 0.65);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-hero-arrow:hover {
+      background: #ac0505;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .project-hero-arrow svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .project-hero-prev {
+      left: 16px;
+    }
+
+    .project-hero-next {
+      right: 16px;
+    }
+
+    .project-hero-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(6px);
+    }
+
+    .project-hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      border: none;
+      background: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+
+    .project-hero-dot.active {
+      width: 22px;
+      background: #ffffff;
+    }
+
+    @media (max-width: 767px) {
+      .project-hero-arrow {
+        width: 36px;
+        height: 36px;
+      }
+
+      .project-hero-prev {
+        left: 10px;
+      }
+
+      .project-hero-next {
+        right: 10px;
+      }
+
+      .project-hero-dots {
+        bottom: 10px;
+      }
+    }
   </style>
 </head>
+
 <body class="bg-white text-slate-900">
 
 <!-- ═══════════════════ HEADER ═══════════════════ -->
@@ -124,18 +312,26 @@
   <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
     <div class="flex items-center gap-1 mr-auto">
       <button id="mobileMenuBtn" class="md:hidden p-2 text-white" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
+
       <a href="../index.html" class="flex items-center shrink-0">
         <img src="../assets/images/WAWithoutText2.png?v=1" alt="Watchdog Logo" class="h-8 md:h-12 w-auto object-contain"/>
         <img src="../assets/images/WANeutral2.png?v=1" alt="Watchdog Text" class="h-8 md:h-12 w-auto object-contain"/>
       </a>
     </div>
+
     <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
       <div class="relative group">
-        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">About Us
-          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg>
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">
+          About Us
+          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 7l5 5 5-5H5z"/>
+          </svg>
         </button>
+
         <div class="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
           <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
           <ul class="py-2">
@@ -145,10 +341,15 @@
           </ul>
         </div>
       </div>
+
       <div class="relative group">
-        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">Projects
-          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg>
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">
+          Projects
+          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 7l5 5 5-5H5z"/>
+          </svg>
         </button>
+
         <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
           <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
           <ul class="py-2">
@@ -156,24 +357,33 @@
           </ul>
         </div>
       </div>
+
       <div class="relative group">
-        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">Careers
-          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg>
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">
+          Careers
+          <svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 7l5 5 5-5H5z"/>
+          </svg>
         </button>
+
         <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
           <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
           <ul class="py-2">
-            <li><a href="../index.html#careers" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Internship / On-the-Job Training</a></li>
-            <li><a href="../index.html#careers" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Engineering</a></li>
-            <li><a href="../index.html#careers" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Finance</a></li>
-            <li><a href="../index.html#careers" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Marketing</a></li>
-            <li><a href="../index.html#careers" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Management</a></li>
+            <li><a href="../careers/internship.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Internship / On-the-Job Training</a></li>
+            <li><a href="../careers/engineering.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Engineering</a></li>
+            <li><a href="../careers/finance.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Finance</a></li>
+            <li><a href="../careers/logistics.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Logistics</a></li>
+            <li><a href="../careers/marketing.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Marketing</a></li>
+            <li><a href="../careers/management.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Management</a></li>
           </ul>
         </div>
       </div>
     </nav>
+
     <div class="flex justify-end">
-      <a href="../index.html#contact" class="hidden md:inline-flex items-center justify-center rounded-md bg-[#ac0505] px-4 py-2 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">Contact Us</a>
+      <a href="../index.html#contact" class="hidden md:inline-flex items-center justify-center rounded-md bg-[#ac0505] px-4 py-2 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">
+        Contact Us
+      </a>
     </div>
   </div>
 </header>
@@ -188,64 +398,66 @@
       <img src="../assets/images/WAWithoutText2.png?v=1" alt="Logo" class="h-8 w-auto"/>
       <img src="../assets/images/WANeutral2.png?v=1" alt="Watchdog" class="h-8 w-auto"/>
     </div>
+
     <button id="drawerCloseBtn" class="text-white/60 hover:text-white p-1">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12"/>
+      </svg>
     </button>
   </div>
+
   <nav class="flex-1 overflow-y-auto py-4 px-3">
     <a href="../index.html" class="drawer-link flex items-center gap-4 px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
       <span class="font-semibold text-sm">Home</span>
     </a>
+
     <div class="drawer-accordion">
       <button class="drawer-acc-btn flex items-center justify-between w-full px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-        <div class="flex items-center gap-4"><svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="font-semibold text-sm">About Us</span></div>
-        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+        <div class="flex items-center gap-4">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span class="font-semibold text-sm">About Us</span>
+        </div>
+        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7"/>
+        </svg>
       </button>
+
       <div class="drawer-acc-panel hidden pl-12 pb-1">
         <a href="../about/ourStory.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Our Story</a>
         <a href="../about/howWeWork.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">How We Work</a>
         <a href="../about/ourPartners.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Our Partners</a>
       </div>
     </div>
+
     <div class="drawer-accordion">
       <button class="drawer-acc-btn flex items-center justify-between w-full px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-        <div class="flex items-center gap-4"><svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="font-semibold text-sm">Services</span></div>
-        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+        <div class="flex items-center gap-4">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M3 3h18v18H3zM3 9h18M9 21V9"/>
+          </svg>
+          <span class="font-semibold text-sm">Projects</span>
+        </div>
+        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7"/>
+        </svg>
       </button>
-      <div class="drawer-acc-panel hidden pl-12 pb-1">
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">PLC & SCADA Engineering</a>
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Variable Speed Drive Solutions</a>
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Offshore & Rig Modernization</a>
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Process Instrumentation</a>
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Control Panel Assembly</a>
-        <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Automation Training</a>
-      </div>
-    </div>
-    <div class="drawer-accordion">
-      <button class="drawer-acc-btn flex items-center justify-between w-full px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-        <div class="flex items-center gap-4"><svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg><span class="font-semibold text-sm">Projects</span></div>
-        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-      </button>
+
       <div class="drawer-acc-panel hidden pl-12 pb-1">
         <a href="../index.html#projects" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Featured Projects</a>
       </div>
     </div>
-    <div class="drawer-accordion">
-      <button class="drawer-acc-btn flex items-center justify-between w-full px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
-        <div class="flex items-center gap-4"><svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="font-semibold text-sm">Careers</span></div>
-        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-      </button>
-      <div class="drawer-acc-panel hidden pl-12 pb-1">
-        <a href="../index.html#careers" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Internship / On-the-Job Training</a>
-        <a href="../index.html#careers" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Engineering</a>
-        <a href="../index.html#careers" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Finance</a>
-        <a href="../index.html#careers" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Marketing</a>
-        <a href="../index.html#careers" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Management</a>
-      </div>
-    </div>
   </nav>
-  <a href="../index.html#contact" class="drawer-link flex items-center justify-center w-full rounded-md bg-[#ac0505] px-4 py-3 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">Contact Us</a>
+
+  <a href="../index.html#contact" class="drawer-link flex items-center justify-center w-full rounded-md bg-[#ac0505] px-4 py-3 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">
+    Contact Us
+  </a>
 </div>
 
 <script>
@@ -253,12 +465,27 @@
   const closeBtn = document.getElementById('drawerCloseBtn');
   const drawer = document.getElementById('mobileDrawer');
   const overlay = document.getElementById('drawerOverlay');
-  function openDrawer() { drawer.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-  function closeDrawer() { drawer.classList.add('-translate-x-full'); overlay.classList.add('hidden'); document.body.style.overflow = ''; }
+
+  function openDrawer() {
+    drawer.classList.remove('-translate-x-full');
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
   menuBtn.addEventListener('click', openDrawer);
   closeBtn.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
-  drawer.querySelectorAll('.drawer-link').forEach(link => link.addEventListener('click', closeDrawer));
+
+  drawer.querySelectorAll('.drawer-link').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
   drawer.querySelectorAll('.drawer-acc-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const panel = btn.nextElementSibling;
@@ -272,41 +499,100 @@
 <!-- ═══════════════════ ARTICLE HEADER ═══════════════════ -->
 <div class="mx-auto max-w-5xl px-4 sm:px-6 pt-10 pb-6">
 
-  <!-- Breadcrumb -->
   <div class="flex items-center gap-2 text-xs text-slate-400 mb-6 flex-wrap">
     <a href="../index.html" class="hover:text-slate-700">Home</a>
     <span>›</span>
     <a href="../index.html#projects" class="hover:text-slate-700">Projects</a>
     <span>›</span>
-    <span class="text-slate-600">Distillery Automation Modernization</span>
+    <span class="text-slate-600">Chiller Plant PLC-SCADA Integration</span>
   </div>
 
-  <!-- Category tag -->
-  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Food &amp; Beverage · PLC Migration · Control Panel Rehabilitation</span>
+  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">
+    Building Automation · Siemens S7-1200 PLC · Modbus · SCADA Integration
+  </span>
 
-  <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
-    Distillery Automation Modernization –<br class="hidden sm:block"/> Legacy PLC Migration &amp; Control Panel Rehabilitation for a Food &amp; Beverage Processing Facility
+    Chiller Plant PLC-SCADA Integration and Remote Monitoring System
   </h1>
 
-  <!-- Meta row -->
   <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
-    <span><span class="font-semibold text-slate-700">Location:</span> Philippines</span>
+    <span><span class="font-semibold text-slate-700">System:</span> Chillers 1, 2, and 3</span>
+    <span class="hidden sm:inline text-slate-300">|</span>
+    <span><span class="font-semibold text-slate-700">Platform:</span> Siemens S7-1200 PLC + SCADA</span>
     <span class="hidden sm:inline text-slate-300">|</span>
     <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-600">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>Completed
+      <span class="w-2 h-2 rounded-full bg-emerald-600"></span>Completed
     </span>
   </div>
 </div>
 
-<!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
+<!-- ═══════════════════ HERO IMAGE SLIDESHOW ═══════════════════ -->
 <div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
-  <img
-    src="../assets/images/DistilleryProject.jpg"
-    alt="Distillery Automation Modernization"
-    class="w-full rounded-xl object-cover"
-    style="height: clamp(220px, 40vw, 480px);"
-  />
+  <div class="project-hero-slider" id="projectHeroSlider">
+
+    <div class="project-hero-slide active">
+      <img
+        src="../assets/images/IMG_3739_2.jpeg"
+        alt="Chiller 1 SCADA monitoring screen"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/IMG_3739.jpeg"
+        alt="Chiller 2 SCADA monitoring screen"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/Chiller 1_Pic.png"
+        alt="Chiller 3 SCADA monitoring screen"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/MB_AHU.png"
+        alt="PLC panel for chiller integration system"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/Chiller 3_Pic.PNG"
+        alt="SCADA monitoring screen for connected HVAC equipment"
+      />
+    </div>
+
+    <div class="project-hero-slide">
+      <img
+        src="../assets/images/Chiller 2_Pic.PNG"
+        alt="PLC and network hardware for chiller integration"
+      />
+    </div>
+
+    <button class="project-hero-arrow project-hero-prev" type="button" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <button class="project-hero-arrow project-hero-next" type="button" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M9 6l6 6-6 6" />
+      </svg>
+    </button>
+
+    <div class="project-hero-dots" aria-label="Slideshow navigation">
+      <button class="project-hero-dot active" type="button" aria-label="Go to image 1"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 2"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 3"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 4"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 5"></button>
+      <button class="project-hero-dot" type="button" aria-label="Go to image 6"></button>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════ BODY ═══════════════════ -->
@@ -319,79 +605,197 @@
       <!-- Overview -->
       <div class="fade-up">
         <div class="section-label">Project Overview</div>
+
         <p class="text-slate-600 text-lg leading-relaxed">
-          Watchdog Automation successfully executed a complete automation modernization project for a major Food &amp; Beverage distillation facility, replacing a legacy control platform with a high-performance Siemens automation architecture. The project addressed the challenges of obsolete hardware, limited system support, and aging control infrastructure, ensuring long-term operational reliability and improved plant performance.
+          Watchdog Automation completed a chiller plant integration project involving Chillers 1, 2, and 3. The work integrated the chiller system with a Siemens S7-1200 PLC using Modbus communication and connected the automation platform to a SCADA-based monitoring and control system.
         </p>
+
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The existing automation system was built on the Allen-Bradley SLC500 platform, which had reached obsolescence and posed increasing risks related to spare parts availability, system downtime, and maintenance limitations. Our engineering team carried out a full migration of the control system to the Siemens SIMATIC S7-1500 platform, providing a modern, scalable, and future-ready automation solution.
+          The project enabled real-time acquisition, visualization, storage, and analysis of chiller operating data. Through the SCADA interface, operators and maintenance personnel can monitor equipment status, alarms, operating conditions, performance trends, and historical records from a centralized platform.
         </p>
-      </div>
 
-      <!-- Software Migration -->
-      <div class="fade-up">
-        <div class="section-label">Software Migration</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          A major part of the project involved reverse engineering and software migration. The original RSLogix 500 program was carefully analyzed, re-structured, and converted into Siemens TIA Portal V20, ensuring that all process logic, interlocks, and safety conditions were accurately replicated while taking advantage of the advanced capabilities of the new platform.
-        </p>
-      </div>
-
-      <!-- Operator Interface Upgrade -->
-      <div class="fade-up">
-        <div class="section-label">Operator Interface Upgrade</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          To complement the PLC upgrade, the operator interface was modernized using a Siemens SIMATIC Unified Comfort Panel (MTP1200). The new HMI provides enhanced visualization, improved diagnostics, and a significantly more intuitive user experience for plant operators and maintenance personnel.
-        </p>
-      </div>
-
-      <!-- Control Panel Rehabilitation -->
-      <div class="fade-up">
-        <div class="section-label">Control Panel Rehabilitation</div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          Beyond the control system upgrade, the project included a complete rehabilitation of the automation control panel. The legacy enclosure and internal electrical components were replaced with a new industrial-grade SS316 stainless steel enclosure, specifically designed for the harsh environmental conditions typically present in distillation and food processing environments.
-        </p>
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          All internal components — including power distribution devices, relays, terminal blocks, protection devices, and wiring systems — were replaced with new industrial-grade hardware, resulting in a fully rebuilt control panel compliant with modern industrial standards.
-        </p>
-        <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The final system now operates on a high-performance Siemens S7-1517 PLC, providing substantial improvements in processing power, communication capability, diagnostics, and long-term maintainability.
+          The system was also designed with internet-based connectivity, allowing authorized users to remotely view chiller operating data, acknowledge alarms, review performance trends, and support maintenance planning without relying only on local inspection.
         </p>
       </div>
 
-      <!-- Project Highlights -->
+      <!-- Integrated Scope -->
       <div class="fade-up">
-        <div class="section-label">Project Highlights</div>
+        <div class="section-label">Integrated Scope</div>
+
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The integration covered PLC communication, SCADA development, real-time data acquisition, alarm and event handling, remote monitoring, historical storage, and reporting functions for the chiller plant.
+        </p>
+      </div>
+
+      <div class="fade-up">
         <div class="sys-grid">
-          <div class="sys-card"><span class="sys-card-dot"></span>Migration from Allen-Bradley SLC500 to Siemens SIMATIC S7-1500 CPU 1517</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Conversion of RSLogix 500 program to Siemens TIA Portal V20 architecture</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Deployment of Siemens MTP1200 Unified HMI for advanced plant visualization</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Complete control panel rehabilitation and modernization</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Installation of a SS316 stainless steel industrial enclosure for corrosion resistance</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Replacement of all internal electrical components and wiring</div>
-          <div class="sys-card"><span class="sys-card-dot"></span>Improved system reliability, maintainability, and spare parts availability</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Siemens S7-1200 PLC integration</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Modbus communication with Chillers 1, 2, and 3</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>SCADA-based centralized monitoring and control</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>IP-based network and internet communication</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Real-time data acquisition and visualization</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Alarm monitoring, event logging, and reporting</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Historical data storage and trend analysis</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Remote access to chiller operating data and system status</div>
         </div>
       </div>
 
-      <!-- Engineering Value Delivered -->
+      <!-- Scope 1 -->
+      <div class="fade-up work-card">
+        <div class="work-card-head">
+          <span class="work-number">01</span>
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 01</div>
+            <h2 class="text-xl font-extrabold text-slate-900">PLC and Modbus Chiller Integration</h2>
+          </div>
+        </div>
+
+        <div class="work-card-body">
+          <p class="text-slate-600 text-lg leading-relaxed">
+            This scope focused on integrating Chillers 1, 2, and 3 with a Siemens S7-1200 PLC. Modbus protocol was used as the communication method between the chiller equipment and the PLC, allowing operating data and equipment status to be collected through the automation system.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            The PLC served as the central data acquisition and communication point for chiller operating parameters. The integration allowed the SCADA system to access live equipment data, making the chiller plant easier to monitor, diagnose, and supervise from a centralized interface.
+          </p>
+
+          <div class="pill-list mt-6">
+            <div class="pill-item">Integrated Chillers 1, 2, and 3 with Siemens S7-1200 PLC</div>
+            <div class="pill-item">Configured Modbus communication between chillers and PLC</div>
+            <div class="pill-item">Enabled centralized acquisition of chiller operating data</div>
+            <div class="pill-item">Provided a reliable data bridge between equipment and SCADA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope 2 -->
+      <div class="fade-up work-card">
+        <div class="work-card-head">
+          <span class="work-number">02</span>
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 02</div>
+            <h2 class="text-xl font-extrabold text-slate-900">SCADA Monitoring and Control Development</h2>
+          </div>
+        </div>
+
+        <div class="work-card-body">
+          <p class="text-slate-600 text-lg leading-relaxed">
+            A SCADA-based monitoring and control system was developed to provide centralized supervision of the chiller plant. The SCADA interface allows users to view real-time equipment status, operating conditions, alarms, and performance indicators from a single monitoring platform.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            The system supports real-time visualization of chiller data, including run/stop status, compressor operating status, chilled water supply and return temperatures, condenser water conditions, water pressure and flow status, fault conditions, operating hours, runtime, energy consumption, and performance indicators.
+          </p>
+
+          <div class="pill-list mt-6">
+            <div class="pill-item">Developed SCADA interface for centralized chiller monitoring</div>
+            <div class="pill-item">Displayed real-time chiller operating parameters</div>
+            <div class="pill-item">Provided centralized control and supervision functions</div>
+            <div class="pill-item">Improved operator visibility of plant performance and system status</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope 3 -->
+      <div class="fade-up work-card">
+        <div class="work-card-head">
+          <span class="work-number">03</span>
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 03</div>
+            <h2 class="text-xl font-extrabold text-slate-900">Alarm, Event, Logging, and Reporting Functions</h2>
+          </div>
+        </div>
+
+        <div class="work-card-body">
+          <p class="text-slate-600 text-lg leading-relaxed">
+            The project implemented alarm monitoring, event logging, historical data storage, trend analysis, and reporting functions. These features allow plant personnel to review equipment behavior, identify operating abnormalities, and analyze system performance over time.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            Historical records and trend data support troubleshooting, maintenance planning, and operational review. Reports can be generated for chiller operation, alarms, system events, runtime, and energy performance analysis.
+          </p>
+
+          <div class="pill-list mt-6">
+            <div class="pill-item">Implemented alarm monitoring and event logging</div>
+            <div class="pill-item">Supported historical data storage and trend analysis</div>
+            <div class="pill-item">Enabled reporting for operational and energy performance review</div>
+            <div class="pill-item">Improved troubleshooting and maintenance planning capability</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope 4 -->
+      <div class="fade-up work-card">
+        <div class="work-card-head">
+          <span class="work-number">04</span>
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Scope 04</div>
+            <h2 class="text-xl font-extrabold text-slate-900">Remote Monitoring and Internet-Based Access</h2>
+          </div>
+        </div>
+
+        <div class="work-card-body">
+          <p class="text-slate-600 text-lg leading-relaxed">
+            The PLC and SCADA system were connected to an IP-based network to support internet communication and remote monitoring. Authorized users can remotely view chiller operating data, equipment status, alarms, and performance trends from workstations or mobile devices.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed mt-4">
+            Remote access reduces the need for repeated on-site inspection and allows faster fault response. The system also supports remote viewing of historical data, alarm acknowledgment, diagnostics, and maintenance-related information.
+          </p>
+
+          <div class="pill-list mt-6">
+            <div class="pill-item">Connected PLC and SCADA system to an IP-based network</div>
+            <div class="pill-item">Enabled remote access to chiller operating data and system status</div>
+            <div class="pill-item">Supported remote alarm viewing and acknowledgment</div>
+            <div class="pill-item">Reduced on-site inspection requirements through remote diagnostics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
       <div class="fade-up">
-        <div class="section-label">Engineering Value Delivered</div>
+        <div class="section-label">Project Result</div>
+
         <p class="text-slate-600 text-lg leading-relaxed">
-          This project demonstrates Watchdog Automation's capability to perform complex cross-platform PLC migrations, modernize legacy industrial systems, and deliver fully engineered control solutions aligned with current automation standards.
+          The completed system provided centralized visibility and control of the chiller plant through Siemens PLC integration, Modbus data communication, SCADA visualization, alarm handling, event logging, historical trending, reporting, and remote monitoring capability.
         </p>
+
         <p class="text-slate-600 text-lg leading-relaxed mt-4">
-          The upgraded system now provides the distillery with:
+          The project improved operational visibility, fault response, maintenance efficiency, condition monitoring, energy performance tracking, and overall facility management by turning chiller operating data into accessible and actionable information.
         </p>
-        <div class="pill-list mt-4">
-          <div class="pill-item">Higher automation reliability</div>
-          <div class="pill-item">Enhanced operator visibility and diagnostics</div>
-          <div class="pill-item">Reduced maintenance risks associated with obsolete equipment</div>
-          <div class="pill-item">Improved scalability for future process expansion</div>
-        </div>
       </div>
 
-      <!-- Back link -->
+      <div class="fade-up">
+        <ul class="space-y-2 mt-4">
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100">
+            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
+            Chillers 1, 2, and 3 integrated with Siemens S7-1200 PLC
+          </li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200">
+            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
+            Modbus communication established for chiller data acquisition
+          </li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300">
+            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
+            SCADA monitoring and control system developed
+          </li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400">
+            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
+            Alarm monitoring, event logging, reporting, and trend analysis enabled
+          </li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-500">
+            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>
+            Remote monitoring and internet-based access implemented
+          </li>
+        </ul>
+      </div>
+
       <div class="pt-4 border-t border-slate-100">
         <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
           Back to All Projects
         </a>
       </div>
@@ -401,25 +805,97 @@
     <!-- ── SIDEBAR ── -->
     <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4 fade-up delay-200">
 
-      <!-- Project details -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
         <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
-          <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Project Details</div>
+          <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">
+            Project Details
+          </div>
         </div>
+
         <div class="px-4 py-4 space-y-3 text-sm">
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Category</div><div class="font-semibold text-slate-800">PLC Migration / Control Panel Modernization</div></div>
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Location</div><div class="font-semibold text-slate-800">Philippines</div></div>
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Status</div>
-            <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-700"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Completed</span>
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              Category
+            </div>
+            <div class="font-semibold text-slate-800">
+              Chiller Plant PLC-SCADA Integration
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              Control Platform
+            </div>
+            <div class="font-semibold text-slate-800">
+              Siemens S7-1200 PLC
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              Communication
+            </div>
+            <div class="font-semibold text-slate-800">
+              Modbus Protocol
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              System Type
+            </div>
+            <div class="font-semibold text-slate-800">
+              SCADA Monitoring and Control
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              Contractor
+            </div>
+            <div class="font-semibold text-slate-800">
+              Watchdog Automation Sales and Services
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-400 uppercase mb-0.5">
+              Status
+            </div>
+            <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-600">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>Completed
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- CTA -->
+      <div class="rounded-xl border border-slate-200 overflow-hidden">
+        <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+          <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">
+            Work Scopes
+          </div>
+        </div>
+
+        <div class="px-4 py-4 space-y-3 text-sm">
+          <div class="font-semibold text-slate-800">01 · PLC and Modbus Integration</div>
+          <div class="font-semibold text-slate-800">02 · SCADA Monitoring and Control</div>
+          <div class="font-semibold text-slate-800">03 · Alarm, Logging, and Reporting</div>
+          <div class="font-semibold text-slate-800">04 · Remote Monitoring Access</div>
+        </div>
+      </div>
+
       <div class="rounded-xl bg-slate-950 p-5 text-white">
-        <div class="font-extrabold text-sm mb-1">Have a similar project?</div>
-        <p class="text-slate-400 text-xs leading-relaxed mb-4">We can engineer a solution tailored to your facility.</p>
-        <a href="../index.html#contact" class="block text-center rounded-lg px-4 py-2.5 text-sm font-bold text-white bg-[#ac0505] hover:bg-[#8b0000] transition-colors">Contact Us</a>
+        <div class="font-extrabold text-sm mb-1">
+          Have a similar project?
+        </div>
+
+        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+          We can engineer a solution tailored to your facility.
+        </p>
+
+        <a href="../index.html#contact" class="block text-center rounded-lg px-4 py-2.5 text-sm font-bold text-white bg-[#ac0505] hover:bg-[#8b0000] transition-colors">
+          Contact Us
+        </a>
       </div>
 
     </div>
@@ -456,6 +932,76 @@
     );
 
     els.forEach((el) => observer.observe(el));
+  })();
+</script>
+
+<script>
+  (function () {
+    const slider = document.getElementById("projectHeroSlider");
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".project-hero-slide");
+    const dots = slider.querySelectorAll(".project-hero-dot");
+    const prevBtn = slider.querySelector(".project-hero-prev");
+    const nextBtn = slider.querySelector(".project-hero-next");
+
+    let currentSlide = 0;
+    let slideTimer;
+    const slideInterval = 35000;
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      dots[currentSlide].classList.remove("active");
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+      slideTimer = setInterval(nextSlide, slideInterval);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(slideTimer);
+      startAutoSlide();
+    }
+
+    nextBtn.addEventListener("click", function () {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    prevBtn.addEventListener("click", function () {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", function () {
+        showSlide(index);
+        resetAutoSlide();
+      });
+    });
+
+    slider.addEventListener("mouseenter", function () {
+      clearInterval(slideTimer);
+    });
+
+    slider.addEventListener("mouseleave", function () {
+      startAutoSlide();
+    });
+
+    startAutoSlide();
   })();
 </script>
 
